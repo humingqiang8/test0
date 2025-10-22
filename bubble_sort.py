@@ -1,13 +1,49 @@
-def bubble_sort(arr):
+def is_number(value):
     """
-    冒泡排序算法实现
+    判断值是否为数字（整数或浮点数），但不包括布尔值
     
     参数:
-        arr: 待排序的列表
+        value: 待判断的值
+    
+    返回:
+        True 如果是数字，否则 False
+    """
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+
+def validate_numbers_only(arr):
+    """
+    验证数组中的所有元素都是数字
+    
+    参数:
+        arr: 待验证的列表
+    
+    返回:
+        True 如果所有元素都是数字，否则 False
+    """
+    for item in arr:
+        if not is_number(item):
+            return False
+    return True
+
+
+def bubble_sort(arr):
+    """
+    冒泡排序算法实现（仅支持数字数组）
+    
+    参数:
+        arr: 待排序的列表（必须只包含数字）
     
     返回:
         排序后的列表
+    
+    异常:
+        TypeError: 如果数组中包含非数字元素
     """
+    # 验证数组中所有元素都是数字
+    if not validate_numbers_only(arr):
+        raise TypeError("数组中包含非数字元素，请确保所有元素都是数字")
+    
     # 创建数组的副本，避免修改原数组
     n = len(arr)
     arr = arr.copy()
@@ -35,8 +71,12 @@ def bubble_sort(arr):
 
 def bubble_sort_with_steps(arr):
     """
-    带步骤显示的冒泡排序，用于演示排序过程
+    带步骤显示的冒泡排序，用于演示排序过程（仅支持数字数组）
     """
+    # 验证数组中所有元素都是数字
+    if not validate_numbers_only(arr):
+        raise TypeError("数组中包含非数字元素，请确保所有元素都是数字")
+    
     print(f"原始数组: {arr}")
     n = len(arr)
     arr = arr.copy()
@@ -71,15 +111,46 @@ if __name__ == "__main__":
         [1],  # 单个元素
         [],   # 空数组
         [1, 2, 3, 4, 5],  # 已排序数组
-        [5, 4, 3, 2, 1]   # 逆序数组
+        [5, 4, 3, 2, 1],  # 逆序数组
+        [3.14, 2.71, 1.41, 0.57],  # 浮点数数组
     ]
     
     print("=== 冒泡排序测试 ===")
     for i, arr in enumerate(test_arrays):
         original = arr.copy()
-        sorted_arr = bubble_sort(arr)
-        print(f"测试 {i+1}: {original} -> {sorted_arr}")
+        try:
+            sorted_arr = bubble_sort(arr)
+            print(f"测试 {i+1}: {original} -> {sorted_arr}")
+        except TypeError as e:
+            print(f"测试 {i+1}: {original} -> 错误: {e}")
+    
+    # 测试包含非数字元素的数组
+    print("\n=== 非数字数组测试 ===")
+    invalid_arrays = [
+        ["a", "b", "c"],
+        [1, 2, "hello"],
+        [1, 2, [3, 4]],
+        [1, 2, {"key": "value"}],
+        [True, False, 1, 2]
+    ]
+    
+    for i, arr in enumerate(invalid_arrays):
+        try:
+            sorted_arr = bubble_sort(arr)
+            print(f"无效测试 {i+1}: {arr} -> {sorted_arr}")
+        except TypeError as e:
+            print(f"无效测试 {i+1}: {arr} -> 错误: {e}")
     
     print("\n=== 排序过程演示 ===")
     demo_array = [64, 34, 25, 12, 22, 11, 90]
-    bubble_sort_with_steps(demo_array)
+    try:
+        bubble_sort_with_steps(demo_array)
+    except TypeError as e:
+        print(f"演示错误: {e}")
+    
+    print("\n=== 非数字数组演示测试 ===")
+    invalid_demo = [1, 2, "hello", 4]
+    try:
+        bubble_sort_with_steps(invalid_demo)
+    except TypeError as e:
+        print(f"演示错误: {e}")
