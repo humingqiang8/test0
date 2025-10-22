@@ -1,38 +1,158 @@
-```
-# Python
-__pycache__/
+#Compiled and build artifacts
 *.pyc
-*.pyo
-*.pyd
+__pycache__/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
+*.class
+*.jar
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
 
-# Test reports
-reports/
-
-# Environment
-.env
-.env.local
-*.env.*
-
-# Dependencies
-venv/
+#Dependencies
 .venv/
-pip-log.txt
-pipenv.lock
+venv/
+node_modules/
+target/
+.gradle/
+.julia/
+.julia-*/
+.julia/packages/
+.julia/artifacts/
+.julia/registries/
+.julia/local/
+.julia/deps/
+.julia/scratch/
+.julia/cache/
+.julia/logs/
+.julia/test/
+.julia/build/
+.julia/src/
+.julia/scratch/
+.julia/artifacts/
+.julia/registries/
+.julia/local/
+.julia/deps/
+.julia/scratch/
+.julia/cache/
+.julia/logs/
+.julia/test/
+.julia/build/
+.julia/src/
 
-# Editors
+#Editors and IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# Logs
 *.log
+*.tmp
+*.backup
+*.rej
+*.orig
 
-# Coverage
-.coverage
-htmlcov/
+#Environment files
+.env
+.env.local
+.env.*
+*.env.*
+
+#Coverage and test artifacts
 coverage/
+htmlcov/
+.coverage
+.coverage.*
+.coverage*
+.coverage.data
+.coverage.xml
+.coverage.json
+.coverage.lcov
+.coverage.out
+.coverage.txt
+.coverage.html
+.coverage.report
+.coverage.summary
 
-# Pytest
-.pytest_cache/
-```
+#System files
+.DS_Store
+Thumbs.db
+._*
+
+#Build and distribution directories
+dist/
+build/
+out/
+release/
+bin/
+obj/
+*.build
+*.release
+*.debug
+*.profile
+*.dump
+*.stackdump
+*.core
+*.crash
+*.log
+*.tmp
+*.temp
+*.lock
+*.pid
+*.sock
+*.run
+*.state
+*.cache
+*.conf
+*.config
+*.settings
+*.user
+*.project
+*.workspace
+*.session
+*.history
+*.log
+*.tmp
+*.backup
+*.swp
+*.swo
+*.rej
+*.orig
+*.patch
+*.diff
+*.patch
+*.diff
+*.log
+*.tmp
+*.backup
+*.swp
+*.swo
+*.rej
+*.orig
+*.patch
+*.diff
+*.patch
+*.diff
