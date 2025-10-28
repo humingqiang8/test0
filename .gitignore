@@ -1,38 +1,61 @@
-```
-# Python
-__pycache__/
+#Compiled and build artifacts
 *.pyc
-*.pyo
-*.pyd
-
-# Test reports
-reports/
-
-# Environment
-.env
-.env.local
-*.env.*
-
-# Dependencies
-venv/
-.venv/
-pip-log.txt
-pipenv.lock
-
-# Editors
-.vscode/
-.idea/
+*.class
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
+*.log
+*.tmp
 *.swp
 *.swo
-
-# Logs
-*.log
-
-# Coverage
-.coverage
-htmlcov/
-coverage/
-
-# Pytest
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+#Dependencies
+.venv/
+venv/
+node_modules/
+__pycache__/
+dist/
+build/
+.mypy_cache/
 .pytest_cache/
-```
+target/
+.gradle/
+#Editors and IDEs
+.vscode/
+.idea/
+#Environment files
+.env
+.env.local
+.env.*
+#System files
+.DS_Store
+Thumbs.db
+#Coverage and test output
+coverage/
+htmlcov/
+.coverage
